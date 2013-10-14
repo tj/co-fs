@@ -3,26 +3,8 @@
  * Module dependencies.
  */
 
+var thunk = require('thunkify');
 var fs = require('fs');
-
-/**
- * Wrap `fn`.
- *
- * @param {Function} fn
- * @return {Function}
- * @api private
- */
-
-function wrap(fn, ctx) {
-  return function(){
-    var args = [].slice.call(arguments);
-    ctx = ctx || this;
-    return function(done){
-      args.push(done);
-      fn.apply(ctx, args);
-    }
-  }
-}
 
 /**
  * Methods to wrap.
@@ -63,7 +45,7 @@ var methods = [
 
 methods.forEach(function(name){
   if (!fs[name]) throw new Error('fs.' + name + ' does not exist');
-  exports[name] = wrap(fs[name]);
+  exports[name] = thunk(fs[name]);
 });
 
 // .exists is still messed

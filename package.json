@@ -18,5 +18,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/visionmedia/co-fs.git"
+  },
+  "dependencies": {
+    "thunkify": "0.0.1"
   }
 }
