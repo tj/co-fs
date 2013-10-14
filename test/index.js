@@ -14,9 +14,7 @@ describe('.exists()', function(){
 
       var ret = yield fs.exists('test/fixtures/hey');
       assert(false === ret);
-
-      done();
-    });
+    })(done);
   })
 })
 
@@ -31,8 +29,6 @@ describe('others', function(){
 
       var ret = yield fs.readFile('test/fixtures/msg.txt', 'utf8');
       assert('hello\n' == ret);
-
-      done();
-    });
+    })(done);
   })
 })
