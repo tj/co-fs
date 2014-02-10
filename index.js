@@ -5,6 +5,7 @@
 
 var thunk = require('thunkify');
 var fs = require('fs');
+var stream = require('co-from-stream');
 
 /**
  * Methods to wrap.
@@ -56,4 +57,10 @@ exports.exists = function(path){
       done(null, !err);
     });
   }
+};
+
+// .createReadStream
+
+exports.createReadStream = function(){
+  return stream(fs.createReadStream.apply(null, arguments));
 };

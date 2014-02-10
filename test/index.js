@@ -18,6 +18,15 @@ describe('.exists()', function(){
   })
 })
 
+describe('.createReadStream()', function(){
+  it('should work', function(done){
+    co(function *(){
+      var read = fs.createReadStream('test/fixtures/msg.txt');
+      assert('hello\n' == (yield read()).toString());
+    })(done);
+  })
+})
+
 describe('others', function(){
   it('should be wrapped', function(done){
     co(function *(){
