@@ -20,7 +20,8 @@
     "url": "https://github.com/visionmedia/co-fs.git"
   },
   "dependencies": {
-    "thunkify": "0.0.1",
-    "co-from-stream": "0.0.0"
+    "an-async": "^0.1.0",
+    "co-from-stream": "0.0.0",
+    "thunkify": "0.0.1"
   }
 }
