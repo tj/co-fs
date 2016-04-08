@@ -39,7 +39,8 @@ var methods = [
   'read',
   'readFile',
   'writeFile',
-  'appendFile'
+  'appendFile',
+  'access'
 ];
 
 // wrap
